@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v6.min.js"></script> <!-- reference D3 library in our code -->
+    <link rel="stylesheet" href="style.css"> <!-- reference to our external style sheet (for visual formatting) -->
+</head>
+<body>
+
+<svg width="1200" height="500"></svg> <!-- SVG container for rendering the D3 visualization -->
+
+<!-- Write JavaScript code below inside script tags: -->
+<script>
+    var colorScale = d3.schemeCategory10;  // Holds an array of colors, part of D3's built-in color scales.
+        // d3.schemeCategory10 is a property of the d3 object, which happens to hold an array.
+        // for example... 
+        // const car = {
+        //     make: "Toyota",    // 'make' is a property with the value "Toyota"
+        //     model: "Corolla",  // 'model' is a property with the value "Corolla"
+        //     year: 2020         // 'year' is a property with the value 2020
+        //     };
+        //     // Accessing the 'make' property of the 'car' object
+        //     console.log(car.make);  // Output: "Toyota"
+    var series1weightColor = colorScale[4]; // Select the 5th color for the weight series
+    var series2carbonDioxideColor = colorScale[2]; // Select the 3rd color for the carbon dioxide series
+    var series3challengingMilesColor = colorScale[0]; // Select the 1st color for the challenging miles series
+
+</script>
+
+</body>
+</html>

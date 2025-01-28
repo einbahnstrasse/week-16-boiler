@@ -1,0 +1,57 @@
+/* 
+This is an external CSS style sheet.
+Its job is to provide visual styling and formatting 
+for the HTML file that references it.
+In this case, this file is loaded by the HTML file that we are coding in class. 
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&display=swap'); /* Import the 'Sorts Mill Goudy' font from Google Fonts for use in the document. */
+
+ .sorts-mill-goudy-regular {
+     font-family: "Sorts Mill Goudy", serif; /* Apply the imported font with regular weight and normal style. */
+     font-weight: 400;
+     font-style: normal;
+ }
+ 
+ body {
+     background-color: azure; /* Set the background color for the body. */
+     font-family: 'Georgia', serif; /* Use 'Georgia' as the fallback serif font. */
+     font-variant-numeric: oldstyle-nums; /* Use old-style numeric font variant. */
+ }
+ 
+ .line {
+     fill: none; /* Remove fill for the lines. */
+     stroke-width: 2px; /* Set the stroke width for the lines. */
+ }
+ 
+ .axis path, .axis line {
+     fill: none; /* Remove fill for axis lines. */
+     stroke: #000; /* Set the stroke color to black for axis lines. */
+     shape-rendering: crispEdges; /* Ensure sharp, crisp edges for the axis lines. */
+ }
+ 
+ .tooltip {
+     position: absolute; /* Position the tooltip element absolutely. */
+     background-color: white; /* Set the tooltip background color to white. */
+     padding: 5px; /* Add padding inside the tooltip. */
+     border: 1px solid #ccc; /* Add a light gray border around the tooltip. */
+     pointer-events: none; /* Disable pointer events on the tooltip. */
+     display: block; /* Ensure the tooltip is displayed as a block element. */
+     opacity: 0.9; /* Set slight transparency for the tooltip. */
+ }
+ 
+ .legend {
+     font-size: 12px; /* Set the font size for legend text. */
+     font-weight: bold; /* Make the legend text bold. */
+ }
+ 
+ .hover-line {
+     stroke: gray; /* Set the stroke color to gray for hover lines. */
+     stroke-width: 1px; /* Set the stroke width for hover lines. */
+ }
+ 
+ .highlight-circle {
+     fill: none; /* Remove fill for highlight circles. */
+     stroke-width: 3px; /* Add a thick stroke for highlight circles. */
+     opacity: 0; /* Hide highlight circles initially. */
+ }

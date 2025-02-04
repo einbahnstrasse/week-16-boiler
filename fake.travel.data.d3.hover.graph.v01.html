@@ -26,6 +26,44 @@
     var series2carbonDioxideColor = colorScale[2]; // Select the 3rd color for the carbon dioxide series
     var series3challengingMilesColor = colorScale[0]; // Select the 1st color for the challenging miles series
 
+
+    var startDate = new Date("2024-09-07");
+    var endDate = new Date("2024-10-19");
+
+    var svg = d3.select("svg"), // D3 selects the <svg> tag from the DOM to manipulate it...
+        margin = {top: 20, right: 150, bottom: 30, left: 50},
+        width = svg.attr("width") - margin.left - margin.right,
+        height = svg.attr("height") - margin.top - margin.bottom,
+        g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            // append a group element <g> to the svg and offset it by the margins 
+    
+    var parseTime = d3.timeParse("%m/%d/%Y"); // converts date strings to Date objects 
+
+    var x = d3.scaleTime().range([0, width]); // maps dates to x-axis positions
+    var yWeight = d3.scaleLinear().range([height, 0]); // weight values on y-axis 
+    var yCarbs = d3.scaleLinear().range([height, 0]); // same as above! 
+    var ychallengingMiles = d3.scaleLinear().range([height, 0]); // same as above! 
+
+    var lineWeight = d3.line() // D3's line generator for drawing lines... 
+                .defined(function(d) {return d.weigh_in !== null && !isNaN(d.weigh_in);}) 
+                    // This defines the line based on valid data 
+                .x(function(d) {return x(d.date);}) // maps x-coordinate using its date 
+                .y(function(d) {return yWeight(d.weigh_in);}) // maps y-coordinate using weight value
+                .curve(d3.curveMonotoneX); // smooths the line using monotonic interpolation 
+
+    var lineCarbonDioxide = d3.line() // D3's line generator for drawing lines... 
+                .x(function(d) {return x(d.date);}) // maps x-coordinate using its date 
+                .y(function(d) {return yCarbs(d.carbon_dioxide);}) // maps y-coordinate using carbon dioxide value
+                .curve(d3.curveMonotoneX); // smooths the line using monotonic interpolation 
+
+    var linechallengingMiles = d3.line() // D3's line generator for drawing lines... 
+                .x(function(d) {return x(d.date);}) // maps x-coordinate using its date 
+                .y(function(d) {return ychallengingMiles(d.challenging_miles);}) // maps y-coordinate using miles value
+                .curve(d3.curveMonotoneX); // smooths the line using monotonic interpolation 
+    
+
+
+
 </script>
 
 </body>

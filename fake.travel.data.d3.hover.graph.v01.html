@@ -33,6 +33,13 @@
     var svg = d3.select("svg"), // D3 selects the <svg> tag from the DOM to manipulate it...
         margin = {top: 20, right: 150, bottom: 30, left: 50},
         width = svg.attr("width") - margin.left - margin.right,
+            // .attr() is a D3.js method that is used to get or set attributes of an element in the DOM (Document Object Model).
+            // When called with one argument, like .attr("width"), it retrieves the value of that attribute.
+            // When called with two arguments, like .attr("width", 500), it sets the value of that attribute.
+            // svg is a D3 selection that refers to an SVG <svg> element in the HTML document.
+            // .attr("width") retrieves the current width of the SVG element.
+            // If the <svg> element has a width attribute (e.g., <svg width="1200">), this method returns "1200" (as a string).
+            // If no width is explicitly set, D3 may return null or an automatically calculated value.
         height = svg.attr("height") - margin.top - margin.bottom,
         g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
             // append a group element <g> to the svg and offset it by the margins 
